@@ -18,7 +18,7 @@ const Confirmation: React.FC = () => {
     <div className="confirmationContainer">
       <h2>Order Confirmation</h2>
 
-      {/* If the cart is empty, show a message to add items */}
+      {/* If the cart is empty, show a message to add item */}
       {itemsList.length === 0 ? (
         <p>Your cart is empty. Add items to your cart before checking out.</p>
       ) : (
