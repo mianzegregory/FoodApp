@@ -9,7 +9,7 @@ const Confirmation: React.FC = () => {
   const cartItems = useAppSelector((state) => state.cart.cartItems);
   const itemsList = Object.entries(cartItems);  // Convert cart items from object to array
 
-  // Calculate total amount
+  // Calculate total amount in
   const totalAmount = itemsList.reduce((total, [itemName, { count, price }]) => {
     return total + price * count;
   }, 0);
