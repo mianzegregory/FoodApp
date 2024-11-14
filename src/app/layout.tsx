@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store'; 
 import home from '@/app/Home/page'
+import next from "nextlink "
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
