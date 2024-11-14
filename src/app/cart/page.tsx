@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import { removeItem } from "../redux/cartSlice";
 import Link from "next/link";
-// cart component that displays item in
+// cart component that displays item in i
 const Cart: React.FC = () => {
   // redux store from hooks
   const cartItems = useAppSelector((state) => state.cart.cartItems);
