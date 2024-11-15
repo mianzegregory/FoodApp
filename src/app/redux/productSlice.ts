@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import productsData from '@/app/products.json'; 
+import productsData from '@/products.json'; 
 
 interface Product {
   id: number;
