@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   };
 
  
-// where my outline start conatins the outer part of the code and the add to cart button
+// where my outline start conatins the outer part of the code and the add to cart buttons
   return (
     <div className="container">
       <header className="header">
