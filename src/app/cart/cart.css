@@ -1,0 +1,54 @@
+.cartContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cartItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cartItem img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  .paymentMethod {
+    margin-top: 20px;
+  }
+  
+  .cardDetails, .mpesaDetails {
+    margin-top: 20px;
+  }
+  
+  .cardDetails input,
+  .mpesaDetails input {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .goToConfirmationButton {
+    margin-top: 30px;
+  }
+  
