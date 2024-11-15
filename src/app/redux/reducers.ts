@@ -1,4 +1,3 @@
-import { ADD_ITEM, REMOVE_ITEM } from './actions';
 
 interface CartState {
   cartItems: Record<string, number>;
