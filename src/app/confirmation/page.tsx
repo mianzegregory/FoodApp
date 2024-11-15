@@ -1,13 +1,13 @@
 "use client"
 
 import React from "react";
-import { useAppSelector } from "../redux/hooks";  
+import { useAppSelector } from "@/app";  
 import Link from "next/link";  
 
 const Confirmation: React.FC = () => {
 
   const cartItems = useAppSelector((state) => state.cart.cartItems);
-  const itemsList = Object.entries(cartItems);  // Convert cart items from object to array
+  const itemsList = Object.entries(cartItems);  // Convert cart items from object to arrayy
 
   // Calculate total amount
   const totalAmount = itemsList.reduce((total, [itemName, { count, price }]) => {
