@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "Apple", "price": 50, "image": "/images/apple.jpg" },
+    { "id": 2, "name": "Avacado", "price": 30, "image": "/images/avacado.jpg" },
+    { "id": 3, "name": "Burger", "price": 80, "image": "/images/burger.jpg" },
+    { "id": 4, "name": "Hotdog", "price": 100, "image": "/images/hotdog.jpg" },
+    { "id": 5, "name": "Melon", "price": 120, "image": "/images/melon.jpg" },
+    { "id": 6, "name": "Pizaa", "price": 800, "image": "/images/pizaa.jpg" },
+    { "id": 7, "name": "Salad", "price": 50, "image": "/images/salad.jpg" }
+  ]
