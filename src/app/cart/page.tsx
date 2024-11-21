@@ -1,14 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import { useAppSelector } from "../redux/hooks";
+import { useDispatch } from "react-redux";
 import { removeItem } from "../redux/cartSlice";
 import Link from "next/link";
+import { AppDispatch } from "../redux/store";
+
 // cart component that displays items
 const Cart: React.FC = () => {
   // redux store from hooks
   const cartItems = useAppSelector((state) => state.cart.cartItems);
-  const dispatch = useAppDispatch();
+  const dispatch: AppDispatch = useDispatch();
 // state where i handled the payment methods shown by stack overflow how to configrure payment
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'mpesa'>('card');
   const [cardNumber, setCardNumber] = useState('');

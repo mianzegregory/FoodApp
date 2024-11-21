@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useAppSelector, useAppDispatch } from '../redux/hooks';
+import { useAppSelector } from '../redux/hooks';
 import { addItem, removeItem } from '../redux/cartSlice';
 import { selectProducts } from '../redux/productSlice';
+import { AppDispatch } from '../redux/store';
 
 import '../APP.css';
-import { AppDispatch } from '../redux/store';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import Link from 'next/link';
 
 const Home: React.FC = () => {
