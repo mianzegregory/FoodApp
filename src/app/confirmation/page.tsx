@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import { useAppSelector } from "@/app";  
+import { useAppSelector } from "@/app/redux/hooks";  
 import Link from "next/link";  
 
 const Confirmation: React.FC = () => {
