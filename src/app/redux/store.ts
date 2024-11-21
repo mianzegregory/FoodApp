@@ -1,6 +1,6 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from 'C:/Users/Smart/Desktop/app/nextjs-dashboard/app/state/cart/cartSlice';
+import cartReducer from './cartSlice';
 
 const store = configureStore({
   reducer: {
