@@ -1,5 +1,8 @@
+"use client"
+
+
 import { createSlice } from '@reduxjs/toolkit';
-import productsData from '@/products.json'; 
+import productsData from '../../products.json'; // Corrected import statement
 
 interface Product {
   id: number;
