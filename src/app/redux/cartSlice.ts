@@ -1,46 +1,46 @@
+"use client"
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartItem {
+  id: number;
   count: number;
-  imagePath: string; 
   price: number;
+  imagePath: string;
+  itemName: string; // Added itemName to the CartItem interface
 }
+
 interface CartState {
-  cartItems: Record<string,CartItem>; 
+  items: CartItem[];
 }
 
 const initialState: CartState = {
-  cartItems: {},
+  items: [],
 };
-
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    // add item in the carts
-    addItem: (state, action: PayloadAction<{ itemName: string; imagePath: string; price: number}>) => {
-      const { itemName, imagePath, price } = action.payload;
-
-      if (state.cartItems[itemName]) {
-        state.cartItems[itemName].count++;
+    addItem: (state, action: PayloadAction<CartItem>) => {
+      const existingItem = state.items.find(item => item.id === action.payload.id);
+      if (existingItem) {
+        existingItem.count += action.payload.count;
       } else {
-        state.cartItems[itemName] = { count: 1, imagePath, price };
+        state.items.push(action.payload);
       }
     },
-// to remove item in the cart delete
-    removeItem: (state, action: PayloadAction<string>) => {
-      const itemName = action.payload;
-      if (state.cartItems[itemName]) {
-        delete state.cartItems[itemName];
+    removeItem: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter(item => item.id !== action.payload);
+    },
+    updateItemCount: (state, action: PayloadAction<{ id: number; count: number }>) => {
+      const existingItem = state.items.find(item => item.id === action.payload.id);
+      if (existingItem) {
+        existingItem.count = action.payload.count;
       }
     },
   },
 });
 
-
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, updateItemCount } = cartSlice.actions;
 export default cartSlice.reducer;
-
-
-export const selectCartItems = (state: { cart: CartState }) => state.cart.cartItems;

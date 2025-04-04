@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const Home: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const cartItems = useAppSelector((state) => state.cart.cartItems);
+  const cartItems = useAppSelector((state) => state.cart.items) || [];
   const products = useAppSelector(selectProducts);
   const [showCart, setShowCart] = React.useState(false);
 
@@ -23,23 +23,29 @@ const Home: React.FC = () => {
   const handleButtonClick = (productName: string) => {
     const product = products.find((p) => p.name === productName);
     if (product) {
-    
-      dispatch(addItem({ itemName: productName, imagePath: product.image, price: product.price }));
+      dispatch(addItem({ 
+        id: product.id, 
+        itemName: productName, 
+        imagePath: product.image, 
+        price: product.price, 
+        count: 1 
+      }));
     }
   };
 
- 
-// where my outline start conatins the outer part of the code and the add to cart buttons
+  const handleRemoveItem = (id: number) => {
+    dispatch(removeItem(id));
+  };
+
   return (
     <div className="container">
       <header className="header">
         <h1>Welcome to Foodstore</h1>
         <div className="Cart">
-          
           <Link href="/cart">
             <button onClick={handleToggleCart}>
-              <img src="cart.png" alt="cart" />
-              {Object.keys(cartItems).length}
+              <img src="/images/cart.png" alt="cart" />
+              {cartItems.reduce((total: number, item: { count: number }) => total + item.count, 0)} {/* Updated to reflect total count */}
             </button>
           </Link>
         </div>

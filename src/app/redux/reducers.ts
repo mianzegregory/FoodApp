@@ -1,3 +1,4 @@
+"use client"
 
 interface CartState {
   cartItems: Record<string, number>;
@@ -9,7 +10,7 @@ const initialState: CartState = {
 
 const cartReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case ADD_ITEM:
+    case 'addItem':
       return {
         ...state,
         cartItems: {
@@ -17,7 +18,7 @@ const cartReducer = (state = initialState, action: any) => {
           [action.payload]: (state.cartItems[action.payload] || 0) + 1,
         },
       };
-    case REMOVE_ITEM:
+    case 'removeItem':
       const { [action.payload]: _, ...newCartItems } = state.cartItems;
       return {
         ...state,
